@@ -1,0 +1,19 @@
+complaints-queue (0.2-2) stable; urgency=low
+
+ * Add DEBIAN/conffiles
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Thu Jun 16 12:48:47 EEST 2016
+
+complaints-queue (0.2-1) stable; urgency=low
+
+ * Add configurable sleep option to client section
+ * Ignore offset from database if it less then skip_until in config
+ * Change json row from blob to longblob
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Wed Jun 15 23:18:36 EEST 2016
+
+complaints-queue (0.1-1) stable; urgency=low
+
+ * Initial release
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Thu Jun  9 18:38:37 EEST 2016

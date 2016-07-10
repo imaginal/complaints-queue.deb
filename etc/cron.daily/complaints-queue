@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+INIFILE=/etc/complaints.queue/complaints_queue.ini
+PIDFILE=`grep pidfile $INIFILE | cut -d= -f2`
+
+test -s $PIDFILE || exit 0
+
+# restart only if alive, angel will restart it
+if ps ax | grep `cat $PIDFILE` | grep complaints >/dev/null
+then
+  kill `cat $PIDFILE`
+fi

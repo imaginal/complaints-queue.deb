@@ -1,0 +1,11 @@
+#!/bin/sh
+
+mkdir -p /var/log/complaints.queue
+
+cd /srv/complaints.queue/var
+ln -s /run/complaints_angel.pid 
+ln -s /run/complaints_queue.pid
+
+[ -x /usr/sbin/update-rc.d ] || exit 0
+
+/usr/sbin/update-rc.d complaints-queue defaults
