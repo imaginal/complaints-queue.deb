@@ -1,3 +1,9 @@
+complaints-queue (0.3-1) stable; urgency=low
+
+ * if complaint.type == "claim" don't store it
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Tue Jul 12 02:44:23 EEST 2016
+
 complaints-queue (0.2-2) stable; urgency=low
 
  * Add DEBIAN/conffiles
