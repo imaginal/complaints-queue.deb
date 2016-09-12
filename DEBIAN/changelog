@@ -1,3 +1,40 @@
+complaints-queue (0.5-3) stable; urgency=low
+
+ * Add tenders cache table and use_cache option
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Tue Aug 16 20:23:12 EEST 2016
+
+complaints-queue (0.5-2) stable; urgency=low
+
+ * Change need_reindex condition
+ * Update openprocurement_client
+ * Update cron.daily restart condition
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Sat Aug 13 23:55:31 EEST 2016
+
+complaints-queue (0.5-1) stable; urgency=low
+
+ * Add Watchdog based on signal.alarm
+ * Improve socket.timeout handling
+ * Change client options, add mode and feed
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Fri Aug 12 00:03:39 EEST 2016
+
+complaints-queue (0.4-2) stable; urgency=low
+
+ * Ignore complaints w/o dateSubmitted (ie drafts)
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Thu Aug 11 17:38:54 EEST 2016
+
+complaints-queue (0.4-1) stable; urgency=low
+
+ * Update table structure, add cancellation_json
+ * Ignore records by complaint.status == 'draft'
+ * Cancel tender in MySQL table by relatedLot.status
+ * Don't update canceled tenders
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Wed Aug  3 12:31:29 EEST 2016
+
 complaints-queue (0.3-1) stable; urgency=low
 
  * if complaint.type == "claim" don't store it

@@ -1,14 +1,21 @@
 #!/bin/sh
 
-set -e
+#set -e
 
+LOGFILE=/var/log/complaints.queue/complaints_queue.log
 INIFILE=/etc/complaints.queue/complaints_queue.ini
 PIDFILE=`grep pidfile $INIFILE | cut -d= -f2`
 
-test -s $PIDFILE || exit 0
+# don't restart if last log records are fresh
+tail $LOGFILE | grep -q `date +%Y-%m-%d` && exit 0
 
-# restart only if alive, angel will restart it
-if ps ax | grep `cat $PIDFILE` | grep complaints >/dev/null
-then
-  kill `cat $PIDFILE`
-fi
+# don't restart if no pidfile present
+test -s $PIDFILE || exit 0
+PID=`cat $PIDFILE`
+
+# don't restart if not started
+ps ax | grep -q -P "$PID .{10,90}complaints_queue" || exit 0
+
+# now kill, angel will restart it
+echo `date +"%Y-%m-%d %H:%M:%S"` Restart by cron >>$LOGFILE
+kill $PID
