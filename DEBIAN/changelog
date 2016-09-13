@@ -1,24 +1,15 @@
-complaints-queue (0.5-3) stable; urgency=low
+complaints-queue (0.5-4) stable; urgency=low
 
+ * Merge changelog 0.5-1 to 0.5-4
  * Add tenders cache table and use_cache option
-
- -- Volodymyr Flonts <flyonts@gmail.com>  Tue Aug 16 20:23:12 EEST 2016
-
-complaints-queue (0.5-2) stable; urgency=low
-
  * Change need_reindex condition
  * Update openprocurement_client
  * Update cron.daily restart condition
-
- -- Volodymyr Flonts <flyonts@gmail.com>  Sat Aug 13 23:55:31 EEST 2016
-
-complaints-queue (0.5-1) stable; urgency=low
-
  * Add Watchdog based on signal.alarm
  * Improve socket.timeout handling
  * Change client options, add mode and feed
 
- -- Volodymyr Flonts <flyonts@gmail.com>  Fri Aug 12 00:03:39 EEST 2016
+ -- Volodymyr Flonts <flyonts@gmail.com>  Tue Sep 12 23:25:54 EEST 2016
 
 complaints-queue (0.4-2) stable; urgency=low
 
